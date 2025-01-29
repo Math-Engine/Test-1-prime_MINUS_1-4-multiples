@@ -2,6 +2,8 @@ import sys
 
 sys.set_int_max_str_digits(2147483647)
 
+import os
+
 import matplotlib.pyplot as plt
 import io
 import base64
@@ -68,3 +70,4 @@ img_url = f"data:image/png;base64,{img_base64}"
 print("==============================================================================================================================")
 print(img_url)
 print("==============================================================================================================================")
+os.system(f'echo "<code>{img_url}</code>" >> $GITHUB_STEP_SUMMARY')
