@@ -26,12 +26,12 @@ multiple_of_4 = 0
 for i in range(3, param):
   if (isPrime(i) == True):
     if (len(str(i)) < 15):
-      if (i%4 == 0):
+      if ((i - 1)%4 == 0):
         multiple_of_4 = multiple_of_4 + 1
       else:
         multiple_of_2 = multiple_of_2 + 1
     else:
-      if (int(str(i)[len(str(i)) - 2: len(str(i))])%4 == 0):
+      if (int(str(i - 1)[len(str(i - 1)) - 2: len(str(i - 1))])%4 == 0):
         multiple_of_4 = multiple_of_4 + 1
       else:
         multiple_of_2 = multiple_of_2 + 1
