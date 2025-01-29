@@ -1,0 +1,26 @@
+name: Distribution-Test-1-prime_MINUS_1-4-multiples
+
+on:
+  workflow_dispatch:
+    inputs:
+      n:
+        description: '분포를 계산할 자연수 (~까지) (3 이상의 자연수)'
+        required: true
+        type: string
+
+run-name: Distribution [ ${{ github.event.inputs.n }} ]
+
+concurrency:
+  group: my-workflow-group
+
+jobs:
+  calculate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Run distribution.py
+      run: python distribution.py ${{ github.event.inputs.n }}
