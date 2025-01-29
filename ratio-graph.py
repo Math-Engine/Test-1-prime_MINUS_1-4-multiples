@@ -32,7 +32,7 @@ multiple_of_4 = 0
 prime_array = []
 multiple_of_2_DIVIDE_multiple_of_4_array = []
 
-for i in range(3, param):
+for i in range(5, param):
   if (isPrime(i) == True):
     prime_array.append(i)
     if (len(str(i)) < 15):
@@ -55,7 +55,7 @@ print(f"multiple_of_2 / multiple_of_4: {multiple_of_2 / multiple_of_4}")
 plt.plot(prime_array, multiple_of_2_DIVIDE_multiple_of_4_array)
 plt.xlabel('Prime Number')  
 plt.ylabel('multiple_of_2 / multiple_of_4')
-plt.title(f'multiple_of_2 / multiple_of_4 ( 3 ~ {param} (Only Prime Number) )')
+plt.title(f'multiple_of_2 / multiple_of_4 ( 5 ~ {param} (Only Prime Number) )')
 
 buffer = io.BytesIO()
 plt.savefig(buffer, format='png')
